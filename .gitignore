@@ -1,0 +1,4 @@
+# BTA --- ignore executables, module and object files. 
+*.x
+*.mod
+*.o
