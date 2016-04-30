@@ -50,4 +50,4 @@ PROGRAM MAIN
 
   Print '(T12A)', "-- the End --"
   call exit(0)
-end Program main
+END PROGRAM MAIN
