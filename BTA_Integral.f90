@@ -19,6 +19,7 @@ CONTAINS
 
 end MODULE MyMod
 
+!> Program main
 PROGRAM MAIN
   USE MyMod
   implicit none
