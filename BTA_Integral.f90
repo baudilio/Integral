@@ -20,7 +20,7 @@ CONTAINS
 
 end MODULE MyMod
 
-!> Program main
+!> Program main. Adding a new comment to alter the source.
 PROGRAM MAIN
   USE MyMod
   implicit none
