@@ -21,6 +21,7 @@ CONTAINS
 end MODULE MyMod
 
 !> Program main. Adding a new comment to alter the source.
+!> Changing firther.
 PROGRAM MAIN
   USE MyMod
   implicit none
