@@ -1,7 +1,8 @@
 !> module definition... Emacs VC operation and control
 MODULE MyMod
-  Implicit none
-  Integer, Parameter :: WP = KIND(1.0D+00)
+  IMPLICIT NONE
+
+  Integer, Parameter :: WP = KIND(1.0D+00) !> Working precision for real variables.
   Integer  :: N
   Real(wp) :: Dx
 
