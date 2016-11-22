@@ -53,5 +53,6 @@ PROGRAM MAIN
   Deallocate(A)
 
   Print '(T12A)', "-- the End --"
-  call exit(0)
+  STOP
+!  call exit(0)
 END PROGRAM MAIN
