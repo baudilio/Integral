@@ -1,17 +1,51 @@
-!> module definition... Emacs VC operation and control
+!------------------------------------------------------------------------------
+! NASA/GSFC, Software Integration & Visualization Office, Code 610.3
+!------------------------------------------------------------------------------
+!
+! MODULE: Module Name
+!
+!> @author
+!> Module Author Name and Affiliation
+!
+! DESCRIPTION:
+!> Brief description of module.
+!
+! REVISION HISTORY:
+! DD Mmm YYYY - Initial Version
+! TODO_dd_mmm_yyyy - TODO_describe_appropriate_changes - TODO_name
+!------------------------------------------------------------------------------
+
 MODULE MyMod
   IMPLICIT NONE
 
   Integer, Parameter :: WP = KIND(1.0D+00) !> Working precision for real variables.
-  Integer  :: N
+  Integer  :: N  !> Number of integration intervals.
   Real(wp) :: Dx
 
 CONTAINS
 
+  !---------------------------------------------------------------------------
+  !> @author
+  !> Baudilio Tejerina - Home.
+  !
+  ! DESCRIPTION:
+  !> Compute the integral of the function A = f(x) by the trapecium quadrature.
+  !> @brief
+  !> Flow method (rate of change of position) used by integrator.
+  !> Compute \f$ \frac{d\lambda}{dt} , \frac{d\phi}{dt},  \frac{dz}{dt} \f$
+  !
+  ! REVISION HISTORY:
+  ! TODO_dd_mmm_yyyy - TODO_describe_appropriate_changes - TODO_name
+  !
+  !> @param[in] inParam
+  !> @param[out] outParam
+  !> @return returnValue
+  !---------------------------------------------------------------------------
+  !
   REAL(KIND=WP) FUNCTION Integrate(A)
     IMPLICIT NONE
     Real(WP), Dimension(:), Pointer :: A
-    REAL(WP) :: S1, S2
+    REAL(WP) :: S1, S2 !> @var Var description
 
     S1 = Sum( A(2:N-1) )
     S2 = A(1) + A(N)
@@ -21,7 +55,7 @@ CONTAINS
 
 end MODULE MyMod
 
-!> Program main. Adding a new comment to alter the source.
+!> Main program. Adding a new comment to alter the source.
 !> Changing further.
 PROGRAM MAIN
   USE MyMod
@@ -35,12 +69,12 @@ PROGRAM MAIN
   xi= -1.0_wp
   xf=  1.0_wp
 
-  Print '(A$)', "Enter N: "
+  Print '(A$)', "Enter the number of integration intervals: "
   Read *, N
 
   N=4  ! For testing purposes.
 
-  Dx = (xf-xi)/(n-1) ! 
+  Dx = (xf-xi)/(n-1) !
   Allocate(A(N))  ! Allocate space for the data array.
 
 ! Load data into the array:
